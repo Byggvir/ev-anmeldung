@@ -1,0 +1,284 @@
+@charset UTF-8;
+/*
+Styles for ev-anmeldung 
+
+Author: Thomas Arend
+Date: 29.07.2018
+Version 0.1.0
+*/
+.success {
+    
+    font-size : 3em;
+    color: green;
+        
+}
+
+.failure {
+    
+    font-size : 2em;
+    color: red;
+    
+}
+
+.message {
+    
+    height  : 15em;
+    background-color: lightgray;
+    border-style: solid;
+    border-color: blue;
+    border-width: 3px;
+    padding : 0.5em;
+    margin  : 0.5em;
+}
+
+button {
+    color: green; 
+    font-weight: bold; 
+}
+
+.button {
+    color: green; 
+    font-weight: bold; 
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (min-width: 40em) {
+.page-header {
+    flex-direction: row;
+  }
+}
+
+.menue {
+    min-width: 10em;
+    min-height: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: right;
+    background-color: cyan;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+
+}
+
+@media all and (min-width: 20em) {
+.menue{
+    flex-direction: row;
+  }
+}
+
+.menuebutton {
+    
+    font-size : 0.4em;
+    width: 16em;
+    margin: 0.2em;
+    padding: 0.1em;
+    text-align: center;
+    border: solid 1px blue;
+    background-color: lightgray;
+    align-content: center;
+
+}
+
+caption {
+    
+    font-size : 2em;
+    background-color: #eeeeee;
+}
+
+table {
+  font-family: monospace;
+  border : 2px solid blue;
+  
+}
+
+th {
+    margin: 0.1em;
+    background: cyan;
+    padding-right:0.5em;
+    
+}
+tr {
+    
+    height: 4em;
+}
+
+tr:nth-of-type(even) td {
+    background-color: #dddddd;
+}
+
+tr:nth-of-type(odd) td {
+    background-color: #ffffff;
+}
+
+td {
+    height: 2em;
+    margin: 0.1em;
+    padding-left:0.2em;
+    padding-right:0.5em;
+  
+}
+
+td .left{
+    
+    text-align: left ;
+    
+}
+
+td .right {
+    
+    text-align: right ;
+    
+}
+
+td .center {
+    
+    text-align: center ;
+    
+}
+
+.verybig {
+   font-size : 1em;
+
+}
+
+.parameter {
+
+    background : lightgray ;
+
+}
+
+
+.colrb {
+    width : 0.1em;
+    color : black;
+    text-align: center;
+    padding-left:0.05em;
+    padding-right:0.05em;
+    
+}
+
+.colfree {
+    width : 1em;
+    color : black;
+    text-align: left;
+    border-left: solid 1px;
+    
+}
+
+.colrbfree {
+    width : 1.5em;
+    text-align: center;
+    
+}
+
+.colbegin {
+    width : 3em;
+    color : black;
+}
+
+.coltitle {
+    width : 8em;
+    color : black;
+    
+}
+.colsubtitle {
+    width : 8em;
+    color : black;
+    
+}
+.colplace {
+    width : 5em;
+    color : black;
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (min-width: 60em) {
+.container {
+    flex-direction: row;
+  }
+}
+
+.box {
+	border: 1px solid;
+	margin: .1em;
+	padding: .5em;
+	background: #fff;
+}
+
+.box:nth-of-type(2) {
+	background: #eee;
+}
+
+.box:nth-of-type(3) {
+	background: #ddd;
+}
+
+.box:nth-of-type(4) {
+	background: #ccc;
+}
+.adminbox {
+    
+    width: 45%;
+}
+
+.copyright {
+ width: 100%;
+ background: #ddd;
+ position: absolute; 
+ bottom: 0px; 
+}
+
+input[type='radio']:disabled {
+    
+    color : red;
+}
+
+input[type='radio']:enabled {
+    
+    color : green;
+}
+
+
+/* This is what we are focused on */
+.table-wrapper{
+  overflow-y: scroll;
+  height: 22em;
+}
+
+.table-wrapper th{
+    position: sticky;
+    top: 0;
+}
+
+/* A bit more styling to make it look better */
+.table-wrapper{
+  background: CadetBlue;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+tr.disabled td {
+    
+ background-color : #ff4040; 
+ 
+}
+
+.radiobutton {
+    
+    width: 1em;
+}

@@ -1,0 +1,33 @@
+<?php
+/**
+ * db.php
+ *
+ * @package default
+ */
+
+
+/*
+ * Autor: Thomas Arend
+ * Stand: 30.12.2018
+ *
+ * Better quick and dirty than perfect but never!
+ *
+ * Security token to detect direct calls of included libraries. */
+
+/*
+ * The user speedviewer needs / has only read access to the database,
+ * he can't do much harm with this.
+ */
+
+global $AnmeldungTest;
+
+isset($AnmeldungTest) or exit ( "No direct calls!" ) ;
+
+$SITE   = 'localhost';
+
+$DBHOST = "localhost";
+$DBDB   = "evservices";
+$DBUSER = "evservices";
+$DBPASS = "2Secure4U!";
+
+?>
