@@ -146,9 +146,9 @@ Aufgrund der Corona-Pandemie sind die Plätze in unseren Gottesdiensten begrenzt
 <p>
 Zum Anmelden geben Sie Ihre Kontaktdaten ein, wählen <u>einen</u> Gottesdienst aus der Liste und klicken Sie auf <span style="font-weight: bold; color: green">Anmelden als Besucher</span>.
 </p>
-<p>
+<!--p>
 Konfirmanden geben nur <strong>Vor-und Nachname</strong> ein und klicken auf <span style="font-weight: bold; color: green">Anmelden als Konfirmand</span>.
-</p>
+</p-->
 
 <h2>Kontaktdaten</h2>
 
@@ -295,13 +295,13 @@ Klicken Sie unten auf <span style="font-weight: bold; color : green">Anmelden</s
     style="color: green; font-weight: bold;">Anmelden als Besucher</button>
 </div>
 
-<div class="menuebutton">
+<!--div class="menuebutton">
 
 <button id="signin"
     name="signin"
     type="submit"
     value="Konfirmand" >Anmelden als Konfirmand</button>
-</div>
+</div-->
 
 <div class="menuebutton">
 <address>
