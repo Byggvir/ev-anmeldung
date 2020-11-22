@@ -128,6 +128,10 @@ if ( ! empty($signin) and empty($eid) ) {
 Aufgrund der Corona-Pandemie sind die Plätze in unseren Gottesdiensten begrenzt. Deshalb bitten wir Sie sich frühzeitig anzumelden.
 </p>
 </div>
+<div class="page-text"> 
+<a href="https://ev-kircherheinbach.de/datenschutz/" target="_blank">Datenschutz</a></br />
+<a href="https://ev-kircherheinbach.de/impressum/" target="_blank">Impressum</a>
+</div>
 </div>
 <form action="index.php" method="post" id="anmeldung" >
 
