@@ -102,17 +102,24 @@ Mit freundlichen Grüßen
 Thomas Arend
 ";
 
-    $header = 'From: Anmeldung Gottesdienst <thomas@tux-lt.dyn.byggvir.de>' . "\n" .
-    'Reply-To: admin@ev-kircherheinbach.de' . "\n" .
-    'X-Mailer: PHP/' . phpversion();
+    $headers   = array();
+    $headers[] = "MIME-Version: 1.0";
+    $headers[] = "Content-type: text/plain; charset=utf-8";
+    $headers[] = "From: Anmeldung Gottesdienst <admin@ev-kircherheinbach.de>";
+    $headers[] = "Bcc: admin@ev-kircherheinbach.de";
+    $headers[] = "Reply-To: rheinbach@ekir.de";
+    $headers[] = "Subject: Anmeldung zum Gottesdienst am/um " . $datum; 
+    $headers[] = "X-Mailer: PHP/".phpversion();
+
+//    $header = 'From: Anmeldung Gottesdienst <thomas@tux-lt.dyn.byggvir.de>' . "\n" .
+//    'Reply-To: admin@ev-kircherheinbach.de' . "\n" .
+//    'X-Mailer: PHP/' . phpversion();
 
 	$subject = "Anmeldung zum Gottesdienst am/um " . $datum;
 
-    if (mail($to, $subject, $message, $header) ) {
+    if (mail($to, $subject, $message, implode("\r\n",$headers)) ) {
 
-	
 	}
 }
-
 
 ?>
