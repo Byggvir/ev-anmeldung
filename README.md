@@ -9,7 +9,19 @@ Es handelt sich um eien Quick and Dirty Lösung und nicht alles - besser fast ni
 
 Diese Web-Seite ist für die Anmeldung zu den Gottesdiensten der Evangelischen Kirchengemeinde Rheinbach unter den Hygiene- und Infektionsschutzmaßnahmen geschrieben. Mit kleinen Anpassungen lässt sie sich für andere Gemeinden verwenden.
 
-# Verfahren
+# Installation
+
+1.  Download des git  mit *git clone  https://github.com/Byggvir/ev-anmeldung.git*
+2.  Kopieren des Inhaltes des Ordners *html* ins (Wurzel-)Verzeichnis des Host. Beispiel: *sudo cp -ru html/* /var/www/html*
+3.  Anpassen der Datei *lib/config.conf* mit der Adresse der SITE und der Datenbankverbindung.
+4.  Anlegen einer Datei für den Passwordschutz der Verzeichnisse mit *htpasswd [ -c ] <u>.htpasswd</u> <u>username</u>* für
+    *   *admin*
+    *   *export*
+5.  Anlegen und Anpassen der Datei *.htaccess* in den Verzeichnissen
+    *   *admin*
+    *   *export*
+
+# Aufbau der Anwendung
 
 ## Anmelden
 
@@ -86,6 +98,10 @@ In der Tabelle *tickets* werden die Anmeldungen gespeichert. D.h die Datensätze
 *   Bestätigt (J/Nein)
 *   Bestätigungstoken
 *   Zeitstemptel
+
+# Caveats
+
+* Installation unterhalb von WordPress in einem eigenen Verzeichnis führt uner Umständen zum Aufruf falscher Seiten.
 
 # ToDo
 

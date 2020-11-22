@@ -1,5 +1,4 @@
 AuthType Basic
 AuthName "Passwortgeschützter Bereich"
 AuthUserFile /var/www/html/admin/.htpasswd
-AuthPGAuthoritative Off
-require user thomas arend seepolt
+require user thomas
