@@ -44,12 +44,12 @@ Dazu muss der folgenden Link, aufgerufen werden. Eine Anmeldung ver-
 fällt, wenn sie nicht spätestens 48 Stunden nach der vollen Stunde 
 der Anmeldung bestätigt wurde.
 
-    https://$SITE/confirm.php?key=$token
+https://$SITE/confirm.php?key=$token
 
 Mit folgendem Link kann eine Anmeldung widerrufen werden, wenn
 der Gottesdienst noch nicht begonnen hat.
 
-    https://$SITE/revoke.php?key=$token
+https://$SITE/revoke.php?key=$token
 
 In diesem Fall werden die Daten gelöscht und es ist eine Neuanmeldung
 erforderlich. 
@@ -101,23 +101,24 @@ Mit freundlichen Grüßen
 
 Thomas Arend
 ";
+    $message = preg_replace('/\n/',"\r\n", $message);
+    
+    $message = wordwrap($message,70, "\r\n") ;
+    
+	$subject = "Anmeldung zum Gottesdienst am/um " . $datum;
 
-    $headers   = array();
-    $headers[] = "MIME-Version: 1.0";
-    $headers[] = "Content-type: text/plain; charset=utf-8";
-    $headers[] = "From: Anmeldung Gottesdienst <admin@ev-kircherheinbach.de>";
-    $headers[] = "Bcc: admin@ev-kircherheinbach.de";
-    $headers[] = "Reply-To: rheinbach@ekir.de";
-    $headers[] = "Subject: Anmeldung zum Gottesdienst am/um " . $datum; 
-    $headers[] = "X-Mailer: PHP/".phpversion();
-
-//    $header = 'From: Anmeldung Gottesdienst <thomas@tux-lt.dyn.byggvir.de>' . "\n" .
-//    'Reply-To: admin@ev-kircherheinbach.de' . "\n" .
-//    'X-Mailer: PHP/' . phpversion();
+    $headers   = array(
+        'MIME-Version' => '1.0' ,
+        'Content-type' => 'text/plain; charset=utf-8',
+        'From' => 'Anmeldung Gottesdienst <admin@ev-kircherheinbach.de>',
+        'Bcc' => 'admin@ev-kircherheinbach.de',
+        'Reply-To' => 'rheinbach@ekir.de',
+        'X-Mailer' => 'PHP/' . phpversion()
+        );
 
 	$subject = "Anmeldung zum Gottesdienst am/um " . $datum;
 
-    if (mail($to, $subject, $message, implode("\r\n",$headers)) ) {
+    if ( mail($to, $subject, $message, $headers) ) {
 
 	}
 }
