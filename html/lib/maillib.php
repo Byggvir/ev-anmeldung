@@ -27,11 +27,12 @@ function SendConfirmMail( $contact , $event , $ticket ) {
     global $SITE;
 
     $to = $contact->EMail;
-    $key = $ticket->confirmtoken;
+    $token = $ticket->confirmtoken;
 	$datum = DateTimeDEU($event->Starttime);
 	
 	$message = "
-Guten Tag,
+	
+Guten Tag, " . $contact->Firstname . " " . $contact->Name . "
 
 zur Sicherheit muss die Anmeldung zum Gottesdienst am
 
@@ -43,17 +44,27 @@ Dazu muss der folgenden Link, aufgerufen werden. Eine Anmeldung ver-
 fällt, wenn sie nicht spätestens 48 Stunden nach der vollen Stunde 
 der Anmeldung bestätigt wurde.
 
-    https://$SITE/confirm.php?key=$key
+    https://$SITE/confirm.php?key=$token
 
 Mit folgendem Link kann eine Anmeldung widerrufen werden, wenn
 der Gottesdienst noch nicht begonnen hat.
 
-    https://$SITE/revoke.php?key=$key
+    https://$SITE/revoke.php?key=$token
 
 In diesem Fall werden die Daten gelöscht und es ist eine Neuanmeldung
-erforderlich.
+erforderlich. 
 
-Ob Sie an einem Gottesdienst teilgenommen haben, ergibt sich nur aus der
+Die Anmedlung erfolgte mit folgenden Daten:
+
+Vorname " . $contact->Firstname . "
+Name    " . $contact->Name . "
+Straße  " . $contact->Street . "
+PLZ     " . $contact->PostalCode . "
+Ort     " . $contact->City . "
+Telefon " . $contact->Phone  . "
+E-Mail  " . $contact->EMail  . "
+
+Ob Sie an dem Gottesdienst teilgenommen haben, ergibt sich nur aus der
 Liste (Papier) am Eingang.
 
 Datenschutz:
