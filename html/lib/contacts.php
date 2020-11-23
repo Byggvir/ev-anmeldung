@@ -34,7 +34,7 @@ class contact extends evservicesdb {
 	public $Street = '';
 	public $PostalCode = '53359';
 	public $City = 'Rheinbach';
-	public $Phone = '02226-';
+	public $Phone = '';
 	public $EMail = '';
 	public $Konfirmand = 0;
 	public $DonotDelete = 0;
