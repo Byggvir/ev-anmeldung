@@ -6,6 +6,11 @@ Author: Thomas Arend
 Date: 29.07.2018
 Version 0.1.0
 */
+address {
+    
+    font-size : 1em;
+}
+
 .success {
     
     font-size : 3em;
