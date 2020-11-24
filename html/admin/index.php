@@ -34,6 +34,8 @@ $AnmeldungTest = "Started";
 <body>
 <h1>Administration der Gottesdienstanmeldungen</h1>
 
+<p>Besucher anmelden: <a href="admin_register.php" target="_blank"> &gt;&gt;</a></p>
+
 <h2>Listen</h2>
 
 <ol>

@@ -133,7 +133,7 @@ Aufgrund der Corona-Pandemie sind die Plätze in unseren Gottesdiensten begrenzt
 <a href="https://ev-kircherheinbach.de/impressum/" target="_blank">Impressum</a>
 </div>
 </div>
-<form action="index.php" method="post" id="anmeldung" >
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="anmeldung" >
 
 <input  type="hidden"
         id="cid"

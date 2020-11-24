@@ -36,6 +36,16 @@ address {
     margin  : 0.5em;
 }
 
+.message-small {
+    
+    height  : 3em;
+    background-color: lightgray;
+    border-style: solid;
+    border-color: blue;
+    border-width: 3px;
+    padding : 0.5em;
+    margin  : 0.5em;
+}
 
 button {
     color: green; 
@@ -276,6 +286,10 @@ input[type='radio']:enabled {
 .table-wrapper{
   overflow-y: scroll;
   height: 22em;
+}
+
+.contact-wrapper{
+  height: 30em;
 }
 
 .table-wrapper th{

@@ -153,6 +153,16 @@ $debugmsg = "";
     value="OK"
     style="color: green; font-weight: bold;">Anmelden</button>
 </div>
+</div>
+<div class="message" style="height: 3em;">
+<?php
+if ( $message != "" ) {
+
+	echo '<p>' . $message . '</p>';
+
+}
+?>
+</div>
 
 </section>
 

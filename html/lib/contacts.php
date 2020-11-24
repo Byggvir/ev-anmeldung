@@ -274,7 +274,7 @@ class contact extends evservicesdb {
 			// Table header
 ?>
 
-<div class="table-wrapper">
+<div class="table-wrapper contact-wrapper">
 
 <table>
 <thead>
