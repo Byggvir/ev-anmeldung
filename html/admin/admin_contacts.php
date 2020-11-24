@@ -38,7 +38,7 @@ include_once "../lib/contacts.php" ;
 
 <h1>EvKG Rheinbach: Besucherverwaltung</h1>
 
-<form action="contacts.php" method="post" id="contactform" >
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="contactform" >
 
 <main class="container">
 

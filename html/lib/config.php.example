@@ -24,6 +24,7 @@ global $AnmeldungTest;
 isset($AnmeldungTest) or exit ( "No direct calls!" ) ;
 
 $SITE   = 'localhost';
+$BCCADMIN = 'thomas@tux-lt.dyn.byggvir.de';
 
 $DBHOST = "localhost";
 $DBDB   = "evservices";

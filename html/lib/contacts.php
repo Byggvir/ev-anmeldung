@@ -130,7 +130,7 @@ class contact extends evservicesdb {
 
 		if ( empty($this->Firstname) 
 		
-            or ! preg_match("/^[a-zA-Z- äöüÄÖÜß]*$/",$this->Firstname )) { 
+            or ! preg_match("/^[a-zA-Z-\. äöüÄÖÜß]*$/",$this->Firstname )) { 
             $error.= " Vorname" ;
         }
         
@@ -241,7 +241,7 @@ class contact extends evservicesdb {
 */
 
 
-    private function add_ticket ($event) {
+    public function add_ticket ($event) {
 
         $ticket = new ticket();
 		$ticket->lookup($event->id , $this->id);
@@ -267,7 +267,7 @@ class contact extends evservicesdb {
 	 */
 	function list ($cid) {
         
-        $SQL = 'select * from contacts;';
+        $SQL = 'select * from contacts order by Name, Firstname;';
 		if ( $this->select($SQL) ) {
 
 
@@ -323,7 +323,7 @@ E-Mail
 
 				print ( '<tr>' );
 				print ( '<td class="center result radiobutton">' );
-				print ( '<input type="radio" id="event'
+				print ( '<input type="radio" id="contact'
 					. $this->id
 					. '" name="contact" value="'
 					. $this->id

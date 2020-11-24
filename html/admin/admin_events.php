@@ -38,7 +38,7 @@ include_once "../lib/events.php" ;
 
 <h1>EvKG Rheinbach: Besucherverwaltung</h1>
 
-<form action="admin_events.php" method="post" id="eventform" >
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="eventform" >
 
 <main class="container">
 

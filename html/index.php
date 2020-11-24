@@ -305,7 +305,7 @@ Klicken Sie unten auf <span style="font-weight: bold; color : green">Anmelden</s
 
 <div class="menuebutton">
 <address>
-  <p class="center">Oder <a href="tel:+4922264760">02226-4760</a> anrufen.</p>
+  <p class="center">Oder <a href="tel:+492226168371">02226-168371</a> anrufen.</p>
 </address>
 </div>
 </div>

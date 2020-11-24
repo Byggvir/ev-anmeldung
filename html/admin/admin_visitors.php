@@ -45,7 +45,7 @@ $debugmsg = "";
 
 <h1>EvKG Rheinbach: Besucherverwaltung</h1>
 
-<form action="admin_visitors.php" method="POST" id="adminform" >
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" id="adminform" >
 
 <main class="container">
 

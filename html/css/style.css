@@ -8,7 +8,7 @@ Version 0.1.0
 */
 address {
     
-    font-size : 1em;
+    font-size : 2em;
 }
 
 .success {
@@ -36,9 +36,15 @@ address {
     margin  : 0.5em;
 }
 
+
 button {
     color: green; 
     font-weight: bold; 
+}
+
+.visitorbox {
+    width : 70%;
+    
 }
 
 .button {
@@ -232,9 +238,20 @@ td .center {
 .box:nth-of-type(4) {
 	background: #ccc;
 }
+
 .adminbox {
     
     width: 45%;
+}
+
+.visitorbox {
+    width : 70%;
+    
+}
+.eventboxsmall {
+
+    width : 30%;
+    
 }
 
 .copyright {

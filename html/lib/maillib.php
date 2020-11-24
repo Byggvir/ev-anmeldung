@@ -25,6 +25,7 @@ isset($AnmeldungTest) or exit("No direct calls!");
 function SendConfirmMail( $contact , $event , $ticket ) {
     
     global $SITE;
+    global $BCCADMIN;
 
     $to = $contact->EMail;
     $token = $ticket->confirmtoken;
@@ -111,7 +112,7 @@ Thomas Arend
         'MIME-Version' => '1.0' ,
         'Content-type' => 'text/plain; charset=utf-8',
         'From' => 'Anmeldung Gottesdienst <admin@ev-kircherheinbach.de>',
-        'Bcc' => 'admin@ev-kircherheinbach.de',
+        'Bcc' => $BCCADMIN,
         'Reply-To' => 'rheinbach@ekir.de',
         'X-Mailer' => 'PHP/' . phpversion()
         );
