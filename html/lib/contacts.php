@@ -241,7 +241,7 @@ class contact extends evservicesdb {
 */
 
 
-    public function add_ticket ($event) {
+    public function add_ticket ($event, $admin=FALSE) {
 
         $ticket = new ticket();
 		$ticket->lookup($event->id , $this->id);
@@ -253,9 +253,13 @@ class contact extends evservicesdb {
             $ticket->eid = $event->id;
             $ticket->cid = $this->id;
             $ticket->reserved = 1;
-            $ticket->confirmed = 0;
+            if ( $admin ) { 
+                $ticket->confirmed = 1;
+            } else {
+                $ticket->confirmed = 0;
+            }
             if ($ticket->new_ticket()) {
-                SendConfirmMail($this, $event, $ticket);
+                if ( $admin === FALSE ) { SendConfirmMail($this, $event, $ticket) ; }
                 return "Angemeldet: " . DateTimeDEU($event->Starttime);
             } else {
                 return "Anmelden fehlgeschlagen";

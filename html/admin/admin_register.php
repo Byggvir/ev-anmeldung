@@ -92,7 +92,7 @@ $debugmsg = "";
 			$error = $C->check_contact();
 			if ($error == "" ) {
 				
-				$message .= $C->add_ticket($E) . '<br />';
+				$message .= $C->add_ticket($E,TRUE) . '<br />';
 
 				} else {
 
