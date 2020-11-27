@@ -232,7 +232,7 @@ Plätze
                     . $this->id
                     . '" '
                     .  checked($this->id , $eid ));
-                if (!$long and $this->FreeSeats==0) {
+                if (!$long and $this->FreeSeats<=0) {
                     print (' disabled ');
                     }
                         
