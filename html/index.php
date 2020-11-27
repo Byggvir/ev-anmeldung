@@ -153,7 +153,7 @@ Konfirmanden geben nur <strong>Vor-und Nachname</strong> ein und klicken auf <sp
 
 <h2>Kontaktdaten</h2>
 
-<p>Vornamen mehrerer Familienmitgliedern können durch <strong>","</strong> oder <strong>"und"</strong>getrennt eingeben. Sie werden in mehrere Anmeldungen geteilt. <span style="color: red;">Bei Nachnamen funktioiert es nicht!</span></p>
+<p>Vornamen mehrerer Familienmitgliedern können durch <strong>","</strong> oder <strong>"und"</strong> getrennt eingeben werden. Sie werden in mehrere Anmeldungen geteilt. <span style="color: red;">Bei Nachnamen funktioiert es nicht!</span></p>
 
 <table>
 
