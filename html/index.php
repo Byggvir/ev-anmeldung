@@ -56,7 +56,8 @@ else {
 $PARAMS = $_POST;
 
 if (array_key_exists('Firstname', $PARAMS)) {
-	$Firstnames = explode(',', $PARAMS['Firstname']);
+    $FN = preg_replace ('/ und /i', ',' , $PARAMS['Firstname'] );
+	$Firstnames = explode(',', $FN);
 }
 
 $C = new contact();
@@ -152,7 +153,7 @@ Konfirmanden geben nur <strong>Vor-und Nachname</strong> ein und klicken auf <sp
 
 <h2>Kontaktdaten</h2>
 
-<p>Vornamen mehrerer Familienmitgliedern durch "," getrennt eingeben.</p>
+<p>Vornamen mehrerer Familienmitgliedern können durch <strong>","</strong> oder <strong>"und"</strong>getrennt eingeben. Sie werden in mehrere Anmeldungen geteilt. <span style="color: red;">Bei Nachnamen funktioiert es nicht!</span></p>
 
 <table>
 

@@ -55,7 +55,7 @@ $debugmsg = "";
 <h2>Liste der Gottesdienste</h2>
 <p>Zum Anzeigen der Besucher Gottesdienst auswählen und auf <strong>Besucherliste</strong> klicken.</p>
 
-<p><strong>Exportieren</strong> (rechts) lädt eine CSV- Adtein der Besucher für Excel / LibreOffice Calc herunter.
+<p><strong>Exportieren</strong> (rechts) lädt eine CSV-Datei der Besucher für Excel / LibreOffice Calc herunter.
 </p>
 <div class="menue">
 <div class="menuebutton">
