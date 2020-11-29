@@ -48,6 +48,9 @@ class visitor extends evservicesdb {
 <thead>
 
 
+<th id="thsel" class="contactsel">
+Auswahl
+</th>
 <th id="thnr" class="contactnr">
 Nr.
 </th>
@@ -107,6 +110,16 @@ Bestätigt
     
                 print ( '<tr>' . PHP_EOL);
     
+				print ( '<td class="center result radiobutton">' . PHP_EOL);
+				print ( '<input type="radio" id="contact'
+					. $this->id
+					. '" name="contact" value="'
+					. $this->id
+					. '" '
+					.  checked($this->id , $cid )
+					. '>' ) ;
+
+				print ( "</td>" );
                 print ( '<td class="left result ">' . $i . '</td>' .  PHP_EOL );
             
                 foreach ($this->data as $key => $value) {
