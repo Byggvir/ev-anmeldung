@@ -59,7 +59,7 @@ $DEBUG = false;
 <?php 
 
 $events = new event();
-$events->list(1);
+$events->list(1,TRUE,TRUE);
 
  
 ?>
