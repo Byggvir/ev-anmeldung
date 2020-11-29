@@ -38,6 +38,7 @@ class contact extends evservicesdb {
 	public $EMail = '';
 	public $Konfirmand = 0;
 	public $DonotDelete = 0;
+	public $Anmeldungen = 0;
 
 	/*
     Create object.
@@ -62,6 +63,8 @@ class contact extends evservicesdb {
 
 		if (array_key_exists('id', $arr)) {
 			$this->id = trim( $arr['id']);
+        } else {
+           $this->id = NULL; 
 		}
 
 		if (array_key_exists('PIN', $arr)) {
@@ -103,6 +106,9 @@ class contact extends evservicesdb {
 		if (array_key_exists('DonotDelete', $arr)) {
 			$this->DonotDelete = trim( $arr['DonotDelete']);
 		}
+		if (array_key_exists('Anmeldungen', $arr)) {
+			$this->DonotDelete = trim( $arr['Anmeldungen']);
+		}
 
 	}
 
@@ -116,6 +122,23 @@ class contact extends evservicesdb {
 		parent::copyrow();
 
 		$this->set($this->rres);
+
+	}
+
+	/**
+	 *
+	 * @param unknown $id
+	 */
+	function look_up($id) {
+        
+        if (is_null($id) or !is_numeric($id)) {
+            $SQL = 'select * from contacts limit 1;';
+        } else {
+            $SQL = 'select * from contacts where id =' . $id . ' limit 1;';
+        }
+		if ($this->select($SQL)){
+            $this->fetchrow(TRUE);
+        }
 
 	}
 
@@ -271,7 +294,7 @@ class contact extends evservicesdb {
 	 */
 	function list ($cid) {
         
-        $SQL = 'select * from contacts order by Name, Firstname;';
+        $SQL = 'select c.*,count(t.id) as Anmeldungen from contacts as c left join tickets as t on t.cid=c.id group by c.id order by Name, Firstname;';
 		if ( $this->select($SQL) ) {
 
 
@@ -315,6 +338,10 @@ Telefon
 E-Mail
 </th>
 
+<th id="thgodi" class="contactserices">
+#GoDi
+</th>
+
 </tr>
 </thead>
 <tbody>
@@ -332,19 +359,19 @@ E-Mail
 					. '" name="contact" value="'
 					. $this->id
 					. '" '
-					.  checked($this->id , $cid )
+					.  checked( $this->id , $cid )
 					. '>' ) ;
 
 				print ( "</td>" );
 
-				print ( '<td class="left result">' . $this->Firstname . '</td>' );
-				print ( '<td class="left result ">' . $this->Name . '</td>' );
-				print ( '<td class="left result ">' . $this->Street . '</td>' );
-				print ( '<td class="right result ">' . $this->PostalCode . '</td>' );
-				print ( '<td class="left result ">' . $this->City . '</td>' );
-				print ( '<td class="left result ">' . $this->Phone . '</td>' );
-				print ( '<td class="left result ">' . $this->EMail . '</td>' );
-
+				print ( '<td class="left result">' . $this->data['Firstname'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['Name'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['Street'] . '</td>' );
+				print ( '<td class="right result ">' . $this->data['PostalCode'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['City'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['Phone'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['EMail'] . '</td>' );
+				print ( '<td class="left result ">' . $this->data['Anmeldungen'] . '</td>' );
 				print ( "</tr>" );
 
 			} /* end while */
