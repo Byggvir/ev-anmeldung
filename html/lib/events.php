@@ -142,7 +142,12 @@ class event extends evservicesdb {
 	/**
 	 *
 	 */
-	function list ($eid, $long=TRUE) {
+	function list ($eid, $long=TRUE, $OLD=FALSE) {
+	    if ($OLD) {
+            $FUTUREONLY = "";
+	    } else {
+            $FUTUREONLY = ' where Starttime > CURRENT_TIME ' ;            
+	    }
 	    $SQL = 'select e.id as id ,'
 	    . ' e.gid as gid ,'
 	    . ' e.Starttime as Starttime ,'
@@ -154,7 +159,7 @@ class event extends evservicesdb {
 	    . ' e.ReservedSeats as ReservedSeats ,'
 	    . ' e.MaxGroups as MaxGroups ,'
 	    . ' SeatCapacity - count(t.id) as FreeSeats'
-	    . ' from events as e left join tickets as t on t.eid=e.id group by e.id order by Starttime;';
+	    . ' from events as e left join tickets as t on t.eid=e.id '. $FUTUREONLY . ' group by e.id order by Starttime;';
 		if ( $this->select($SQL) ) {
 
 
