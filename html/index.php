@@ -36,6 +36,13 @@ $debugmsg = "";
 filter_var_array($_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
 
+if (array_key_exists('signin', $_POST)) {
+	$signin = $_POST['signin'];
+}
+else {
+	$signin = "";
+}
+
 $event = new event();
 if (array_key_exists('event', $_POST) and is_numeric($_POST['event'])) {
 	$eid = $_POST['event'];
@@ -43,14 +50,6 @@ if (array_key_exists('event', $_POST) and is_numeric($_POST['event'])) {
 } else {
 	$event->look_up(NULL);
 	$eid=$event->id;
-}
-
-
-if (array_key_exists('signin', $_POST)) {
-	$signin = $_POST['signin'];
-}
-else {
-	$signin = "";
 }
 
 $PARAMS = $_POST;
@@ -268,9 +267,7 @@ W&auml;hlen Sie unten einen Gottesdienst aus. Derzeit k&ouml;nnen Sie nur einen 
 
 $events = new event();
 
-$SQL = "SELECT * FROM events ORDER BY Starttime;";
-
-$events->list($eid, FALSE);
+$events->list($eid, FALSE, FALSE);
 
 ?>
 
