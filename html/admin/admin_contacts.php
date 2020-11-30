@@ -59,7 +59,10 @@ else {
 	$submit = "";
 }
 
-$C = new contact($_POST);
+$PARAMS = $_POST;
+
+$C = new contact();
+$C->set($PARAMS);
 
 if (array_key_exists('contact', $_POST) and is_numeric($_POST['contact'])) {
 	$cid = $_POST['contact'];
@@ -67,6 +70,11 @@ if (array_key_exists('contact', $_POST) and is_numeric($_POST['contact'])) {
 } else {
 	$C->look_up(NULL);
 	$cid = $C->id;
+}
+
+if (array_key_exists('Firstname', $PARAMS)) {
+    $FN = preg_replace ('/ und /i', ',' , $PARAMS['Firstname'] );
+	$Firstnames = explode(',', $FN);
 }
 
 if ( ! empty($submit) ) {
@@ -82,10 +90,12 @@ if ( ! empty($submit) ) {
 			$C->id = NULL;
 
 			$C->Firstname = trim($value);
-			$message .= $value.": ";
+			$message .= $value . " " . $C->Name . ": ";
 			$error = $C->check_contact();
 			if ($error == "" ) {
-				$message .= $C->add_contact($event) . '<br />';
+			
+				$message .= $C->add_contact(NULL) . '<br />';
+			
 			} else {
 
 				$message .= "Fehlende oder unzulässige Daten in " . $error . '<br />';
@@ -102,7 +112,7 @@ if ( ! empty($submit) ) {
             $delC->look_up ($cid);
             if ( ! is_null($delC->id)) {
                 $SQL = "delete from contacts where id = " . $delC->id . ";";
-                $message .= $SQL;
+                // $message .= $SQL;
                 $delC->delete($SQL);
             	$message .= "Kontakt " . $delC->Name . ', ' .$delC->Firstname . ' gelöscht<br />';
 			}
@@ -122,8 +132,9 @@ if ( ! empty($submit) ) {
 
 <?php 
 
-$C->list($cid);
-
+$CList = new contact();
+$CList->list($cid);
+unset($CList);
  
 ?>
 

@@ -76,7 +76,7 @@ if ( ! empty($signin) and empty($eid) ) {
 			$C->id = NULL;
 
 			$C->Firstname = trim($value);
-			$message .= $value.": ";
+			$message .= $value . " " . $C->Name . ": ";
 			$error = $C->check_contact();
 			if ($error == "" ) {
 				$message .= $C->add_contact($event) . '<br />';

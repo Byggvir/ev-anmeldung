@@ -194,8 +194,8 @@ class contact extends evservicesdb {
 	
         // Check if visitor is in contacts table
 			
-		$LOOKUP = 'select * from contacts where Konfirmand = 0'  
-                . ' and Firstname = "' . $this->Firstname . '"'
+		$LOOKUP = 'select * from contacts where '  
+                . '     Firstname = "' . $this->Firstname . '"'
                 . ' and Name = "' . $this->Name . '"'
                 . ' and Street = "' . $this->Street . '"'
                 . ' and PostalCode = "' . $this->PostalCode . '"'
@@ -232,7 +232,11 @@ class contact extends evservicesdb {
         }
         // Now our visitor should be in contacts table add we can add a ticket
             
-        return($this->add_ticket($event));
+        if (! is_null($event) ) { 
+            return($this->add_ticket($event)) ;
+        } else {
+            return( "Kontakt angelegt." );
+        }
         
 	} /* end of check_data_contacts */
 
