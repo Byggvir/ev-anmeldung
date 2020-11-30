@@ -34,7 +34,7 @@ class contact extends evservicesdb {
 	public $Street = '';
 	public $PostalCode = '53359';
 	public $City = 'Rheinbach';
-	public $Phone = '';
+	public $Phone = '02226-';
 	public $EMail = '';
 	public $Konfirmand = 0;
 	public $DonotDelete = 0;
@@ -172,6 +172,7 @@ class contact extends evservicesdb {
 		     ) ) { $error.= " Ort" ;}
 		
 		$this->Phone = preg_replace('/[^0-9+]/', '', $this->Phone);
+		$this->Phone = preg_replace('/^([1-9])/', '02226\1', $this->Phone);
         $this->Phone = preg_replace('/^0/', '+49', $this->Phone);
 
 		if ( empty($this->Phone)
