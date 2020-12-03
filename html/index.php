@@ -146,6 +146,9 @@ Aufgrund der Corona-Pandemie sind die Plätze in unseren Gottesdiensten begrenzt
 <p>
 Zum Anmelden geben Sie Ihre Kontaktdaten ein, wählen <u>einen</u> Gottesdienst aus der Liste und klicken Sie auf <span style="font-weight: bold; color: green">Anmelden als Besucher</span>.
 </p>
+<p>
+Die Anmeldungen zu den Gottesdiensten an Heiligabend sind erst ab Sonntag, 06.12.2020 12:00 Uhr, bis Freitag 18.12.2020 12:00 uhr möglich. Danach erhalten Sie eine Eintrittskarte mit einem festen, zugewiesenen Platz.
+</p>
 <!--p>
 Konfirmanden geben nur <strong>Vor-und Nachname</strong> ein und klicken auf <span style="font-weight: bold; color: green">Anmelden als Konfirmand</span>.
 </p-->
