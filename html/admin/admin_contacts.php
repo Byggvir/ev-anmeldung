@@ -84,24 +84,26 @@ if ( ! empty($submit) ) {
     switch ($submit) {
 
 	case "ADD" :
-
-		$temp = $C->Firstname;
+        $NewC = new contact(); 
+        $NewC->set($PARAMS);
+		$temp = $CNew->Firstname;
 		foreach ($Firstnames as $value) {
-			$C->id = NULL;
+			$NewC->id = NULL;
 
-			$C->Firstname = trim($value);
-			$message .= $value . " " . $C->Name . ": ";
-			$error = $C->check_contact();
+			$NewC->Firstname = trim($value);
+			$message .= $value . " " . $NewC->Name . ": ";
+			$error = $NewC->check_contact();
 			if ($error == "" ) {
 			
-				$message .= $C->add_contact(NULL) . '<br />';
+				$message .= $NewC->add_contact(NULL) . '<br />';
+				$cid = $NewC->id;
 			
 			} else {
 
 				$message .= "Fehlende oder unzulässige Daten in " . $error . '<br />';
 			}
 		}
-		$C->Firstname = $temp;
+		$NewC->Firstname = $temp;
 
 		break;
 
