@@ -11,9 +11,9 @@ include_once("../lib/events.php");
 // fetch the data
 
     
-$SQL="select 'Id', 'Begin' , 'Ende', 'Titel', 'Untertitel', 'Ort'
+$SQL="select 'Id', 'Begin' , 'Ende', 'Titel', 'Untertitel', 'Ort', 'Besucher'
 union all 
-( select id, Starttime, Endtime, Title, Subtitle, Place from events order by Starttime );" ;
+( select e.id, Starttime, Endtime, Title, Subtitle, Place, count(t.eid) from events as e left join tickets as t on t.eid=e.id order by Starttime );" ;
 ;
 
 $contacts = new evservicesdb();
