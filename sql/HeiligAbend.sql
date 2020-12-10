@@ -23,11 +23,11 @@ insert into events values
 insert into eventgroups 
     values(NULL,"Heiligabend");
 insert into events values
-(NULL,3,"2020-12-24 14:00","2020-12-24 14:25","Christvesper 1","Christvesper 1","Gnadenkirche",10,0,2),
-(NULL,3,"2020-12-24 14:10","2020-12-24 14:35","Christvesper 2","Christvesper 2","Gnadenkirche",10,0,2),
-(NULL,3,"2020-12-24 23:00","2020-12-24 23:45","Christnacht","Christnacht","Gnadenkirche",10,0,2);
+(NULL,3,"2020-12-24 14:00","2020-12-24 14:25","Christvesper 1","Christvesper 1","Gnadenkirche",80,0,2),
+(NULL,3,"2020-12-24 14:10","2020-12-24 14:35","Christvesper 2","Christvesper 2","Gnadenkirche",80,0,2),
+(NULL,3,"2020-12-24 23:00","2020-12-24 23:45","Christnacht","Christnacht","Gnadenkirche",80,0,2);
 
 insert into events values
-(NULL,1,"2020-12-25 11:00","2020-12-25 11:45","1. Weihnachtstag","Weihnachten","Gnadenkirche",10,0,2),
-(NULL,1,"2020-12-26 10:00","2020-12-26 10:45","2. Weihnachtstag","Weihnachten","Gnadenkirche",10,0,2),
-(NULL,1,"2020-12-31 17:00","2020-12-31 18:00","Silvester","Altjahresabend","Gnadenkirche",10,0,2);
+(NULL,1,"2020-12-25 11:00","2020-12-25 11:45","1. Weihnachtstag","Weihnachten","Gnadenkirche",80,0,2),
+(NULL,1,"2020-12-26 10:00","2020-12-26 10:45","2. Weihnachtstag","Weihnachten","Gnadenkirche",80,0,2),
+(NULL,1,"2020-12-31 17:00","2020-12-31 18:00","Silvester","Altjahresabend","Gnadenkirche",80,0,2);
